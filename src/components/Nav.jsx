@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import LibraryLogo from '../assets/Library.svg';
 
 
@@ -23,9 +24,15 @@ const Nav = () => {
                     </li>
                     <button className="btn__menu">
                         <FontAwesomeIcon icon="bars" />
-                    </button>
+                    </button> 
+                    <li className="nav__icon">
+                        <a href="/cart" className="nav__link">
+                            <FontAwesomeIcon icon={faCartShopping} />
+                        </a>
+                        <span className="cart__length">2</span>
+                    </li>
                 </ul>
-                <div className="menu_-backdrop">
+                <div className="menu__backdrop">
                     <button className="btn__menu btn__menu--close">
                         <FontAwesomeIcon icon="times" />
                     </button>
@@ -40,9 +47,9 @@ const Nav = () => {
                             Books
                             </a>
                         </li>
-                            <li className="menu__list">
+                        <li className="menu__list">
                             <a href="/cart" className="menu__link">
-                            Cart
+                                Cart
                             </a>
                         </li>
                     </ul>
