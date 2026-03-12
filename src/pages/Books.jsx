@@ -1,5 +1,6 @@
 import React from "react";
 import { books} from "../data";
+import Book from '../components/ui/Book';
 
 const Books = () => {
     return (
