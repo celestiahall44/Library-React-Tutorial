@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import Books from './components/pages/Books';
 
@@ -11,10 +11,10 @@ function App() {
     <Router>
       <div className="App">
         <Nav />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/books" component={Books} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/books" element={<Books />} />
+        </Routes>
         <Footer />
       </div>
     </Router>
