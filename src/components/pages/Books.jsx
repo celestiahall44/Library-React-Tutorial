@@ -1,6 +1,6 @@
 import React from "react";
-import { books} from "../data";
-import Book from '../components/ui/Book';
+import { books } from "../../data";
+import Book from "../ui/Book";
 
 const Books = () => {
     return (
@@ -13,7 +13,7 @@ const Books = () => {
                                 <h2 className="section__title books__header--title">All books</h2>
                                 <select id="filter" defaultValue="DEFAULT">
                                     <option value="DEFAULT" disabled>Sort</option>
-                                    <option value="LOW_TO_High">Price, Low to High</option>
+                                    <option value="LOW_TO_HIGH">Price, Low to High</option>
                                     <option value="HIGH_TO_LOW">Price, High to Low</option>
                                     <option value="RATING">Rating</option>
                                 </select>
