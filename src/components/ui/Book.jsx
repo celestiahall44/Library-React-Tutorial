@@ -1,11 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from "react";
-import { faStar, faStarHalfAlt  } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import Price from './Price';
+import Rating from './Rating';
 
 const Book = ({ book }) => {
     return (
         <div className="book">
-            <a href="/">
+            <Link to={`/books/${book.id}`} className="book__link">
                 <figure className="book__img--wrapper">
                     <img
                         src={book.url}
@@ -13,33 +14,17 @@ const Book = ({ book }) => {
                         className="book__img"
                     />
                 </figure>
-            </a>
+            </Link>
 
             <div className="book__title">
-                <a href="/" className="book__title--link">
+                <Link to={`/books/${book.id}`} className="book__title--link">
                     {book.title}
-                </a>
+                </Link>
             </div>
 
-            <div className="book__ratings">
-                {new Array(Math.floor(book.rating)).fill(0).map((_, index) => (
-                    <FontAwesomeIcon icon={faStar} key={index} />
-                ))}
-                { !Number.isInteger(book.rating) && <FontAwesomeIcon icon={faStarHalfAlt} /> }
-            </div>
+            <Rating rating={book.rating} />
 
-            <div className="book__price">
-                {book.salePrice ? (
-                    <>
-                        <span className="book__price--normal">
-                            ${book.originalPrice.toFixed(2)}
-                        </span>{' '}
-                        ${book.salePrice.toFixed(2)}
-                    </>
-                ) : (
-                    <>${book.originalPrice.toFixed(2)}</>
-                )}
-            </div>  
+            <Price salePrice={book.salePrice} originalPrice={book.originalPrice} />
         </div>
     );
 }
