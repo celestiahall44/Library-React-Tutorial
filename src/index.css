@@ -257,6 +257,7 @@ header {
 
 .header__img--wrapper {
   padding: 20px;
+  position: relative;
 
   /* Added this after the tutorial to 
   show it over the wave on larger screens */
